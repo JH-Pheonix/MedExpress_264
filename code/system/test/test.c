@@ -144,7 +144,6 @@ void test_imu()
     }
 }
 
-vuint32 cnt = 0;
 void test_signal()
 {
     signal_message_t msg;

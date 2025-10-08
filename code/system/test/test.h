@@ -13,7 +13,7 @@
 #include "attitude.h"
 #include "lcd.h"
 #include "init.h"
-#include "motor_control.h"
+#include "move_control.h"
 #include "imu.h"
 #include "attitude.h"
 #include "signal.h"

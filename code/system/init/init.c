@@ -45,14 +45,10 @@ void system_init(void)
     // test_emm42();
 
     signal_dev = signal_uart_init(UART_2, UART2_RX_P10_6, UART2_TX_P10_5, 115200);
-    test_signal();
+    // test_signal();
+
     // MAX30102 = MAX30102_init(P13_0, P14_6, MODE_HR_ONLY);
-
-    // lidar_left = stp23l_init(UART_8, UART8_RX_P33_6, UART8_TX_P33_7, 230400);
-    // lidar_front = stp23l_init(UART_6, UART6_RX_P23_1, UART6_TX_P22_0, 230400);
-
     // maixcam1 = maixcam_uart_init(UART_10, UART10_RX_P13_1, UART10_TX_P00_8, 115200);
-
     // asrpro1 = asrpro_init(UART_2, UART2_RX_P33_8, UART2_TX_P33_9, 9600);
 
     imu_init(IMU_DEVICE_963RA);
@@ -61,14 +57,14 @@ void system_init(void)
     pit_enable(CCU60_CH1);
     // test_imu();
 
-    // key_init_rewrite(KEY_NUM); // 初始化按键
-    // pit_ms_init(CCU60_CH0, PIT_KEY_T);
-    // pit_enable(CCU60_CH0);
+    key_init_rewrite(KEY_NUM); // 初始化按键
+    pit_ms_init(CCU60_CH0, PIT_KEY_T);
+    pit_enable(CCU60_CH0);
 
-    // control_init();
-    // pit_ms_init(CCU61_CH0, PIT_CONTROL_T);
-    // pit_enable(CCU61_CH0);
+    control_init();
+    pit_ms_init(CCU61_CH0, PIT_CONTROL_T);
+    pit_enable(CCU61_CH0);
 
-    // pit_ms_init(CCU61_CH1, 10);
-    // pit_enable(CCU61_CH1);
+    pit_ms_init(CCU61_CH1, 10);
+    pit_enable(CCU61_CH1);
 }

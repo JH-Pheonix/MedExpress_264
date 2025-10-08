@@ -1,5 +1,5 @@
-#ifndef _CONTROL_MOTOR_CONTROL_H
-#define _CONTROL_MOTOR_CONTROL_H
+#ifndef _CONTROL_move_control_H
+#define _CONTROL_move_control_H
 
 #include "zf_common_typedef.h"
 #include "init.h"
@@ -14,6 +14,6 @@ typedef enum
 } move_dir_enum;
 
 void move_control(move_dir_enum Dir_now, float motor_vel, float turn_diff);
-void motor_reset(void);
+void move_reset(void);
 
 #endif
