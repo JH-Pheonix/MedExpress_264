@@ -17,6 +17,7 @@ asrpro_obj_t asrpro1;
 emm42_obj_t emm42_1;
 
 MAX30102_obj_t MAX30102;
+signal_obj_t signal_dev;
 
 void system_init(void)
 {
@@ -30,7 +31,7 @@ void system_init(void)
     motor4 = motor_init(ATOM0_CH2_P21_4, P21_5, 10000, 0, 1);
 
     // test_motor();
-    test_move_dir();
+    // test_move_dir();
 
     encoder_x = encoder_init(TIM5_ENCODER, TIM5_ENCODER_CH1_P10_3, TIM5_ENCODER_CH2_P10_1);
     encoder_y = encoder_init(TIM2_ENCODER, TIM2_ENCODER_CH1_P33_7, TIM2_ENCODER_CH2_P33_6);
@@ -43,6 +44,8 @@ void system_init(void)
     emm42_1 = emm42_init(UART_3, UART3_RX_P15_7, UART3_TX_P15_6, 115200, EMM42_CHKSUM_CONST_6B);
     // test_emm42();
 
+    signal_dev = signal_uart_init(UART_2, UART2_RX_P10_6, UART2_TX_P10_5, 115200);
+    test_signal();
     // MAX30102 = MAX30102_init(P13_0, P14_6, MODE_HR_ONLY);
 
     // lidar_left = stp23l_init(UART_8, UART8_RX_P33_6, UART8_TX_P33_7, 230400);

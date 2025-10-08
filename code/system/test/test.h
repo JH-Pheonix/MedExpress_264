@@ -16,6 +16,7 @@
 #include "motor_control.h"
 #include "imu.h"
 #include "attitude.h"
+#include "signal.h"
 
 void test_lcd();
 void test_motor();
@@ -25,5 +26,6 @@ void test_encoder();
 void test_servo();
 void test_emm42();
 void test_imu();
+void test_signal();
 
 #endif

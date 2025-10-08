@@ -143,3 +143,17 @@ void test_imu()
         system_delay_ms(100);
     }
 }
+
+vuint32 cnt = 0;
+void test_signal()
+{
+    signal_message_t msg;
+    while (1)
+    {
+        msg = signal_pop_data(&signal_dev);
+        lcd_show_int(0, 1, msg.front_dis, 8);
+        lcd_show_int(0, 2, msg.left_dis, 8);
+        lcd_show_int(0, 3, msg.right_dis, 8);
+        system_delay_ms(100);
+    }
+}
