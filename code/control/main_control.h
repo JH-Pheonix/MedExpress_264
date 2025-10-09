@@ -3,5 +3,8 @@
 
 #include "zf_common_typedef.h"
 
+#include "adjust_control.h"
+#include "move_control.h"
+
 
 #endif

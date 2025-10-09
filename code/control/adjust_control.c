@@ -74,8 +74,13 @@ void adjust_angle(float tar_angle, float speed, float ok_angle)
     }
 }
 
-void adjust_control(vuint8 bed_now)
+float tar_bedone_x = 2200;
+float tar_bedone_y = 1500;
+float tar_bedone_angle = 0;
+float ok_area = 100;
+float ok_angle = 5;
+void adjust_control(vuint8 bed_now, float speed)
 {
-    adjust_position(bed_now, , TARGET_X, TARGET_Y, OK_AREA);
-    adjust_angle(TARGET_ANGLE, DEFAULT_SPEED, OK_ANGLE);
+    adjust_position(1, speed, tar_bedone_x, tar_bedone_y, ok_area);
+    adjust_angle(tar_bedone_angle, speed, ok_angle);
 }
