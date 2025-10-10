@@ -154,6 +154,21 @@ void test_signal()
         lcd_show_int(0, 1, msg.front_dis, 8);
         lcd_show_int(0, 2, msg.left_dis, 8);
         lcd_show_int(0, 3, msg.right_dis, 8);
+        system_delay_ms(10);
+    }
+}
+
+void test_maixcam()
+{
+    maixcam_message_t msg;
+    while (1)
+    {
+        msg = maixcam_pop_data(&maixcam1);
+        // 将uint64转化为string显示
+        char buf[20];
+        sprintf(buf, "%llu", msg.data);
+        lcd_show_string(0, 1, buf);
+
         system_delay_ms(100);
     }
 }

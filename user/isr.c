@@ -161,7 +161,8 @@ IFX_INTERRUPT(uart1_tx_isr, 0, UART1_TX_INT_PRIO)
 IFX_INTERRUPT(uart1_rx_isr, 0, UART1_RX_INT_PRIO)
 {
     interrupt_global_enable(0); // 开启中断嵌套
-    camera_uart_handler();      // 摄像头参数配置统一回调函数
+    // camera_uart_handler();      // 摄像头参数配置统一回调函数
+    maixcam_uart_handler(&maixcam1); // MaixCam 回调函数
 }
 
 // 串口2默认连接到无线转串口模块

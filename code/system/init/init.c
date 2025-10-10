@@ -45,14 +45,14 @@ void system_init(void)
     // test_emm42();
 
     signal_dev = signal_uart_init(UART_2, UART2_RX_P10_6, UART2_TX_P10_5, 115200);
-    test_signal();
+    // test_signal();
     // MAX30102 = MAX30102_init(P13_0, P14_6, MODE_HR_ONLY);
 
     // lidar_left = stp23l_init(UART_8, UART8_RX_P33_6, UART8_TX_P33_7, 230400);
     // lidar_front = stp23l_init(UART_6, UART6_RX_P23_1, UART6_TX_P22_0, 230400);
 
-    // maixcam1 = maixcam_uart_init(UART_10, UART10_RX_P13_1, UART10_TX_P00_8, 115200);
-
+    maixcam1 = maixcam_uart_init(UART_1, UART1_RX_P02_3, UART1_TX_P02_2, 115200);
+    test_maixcam();
     // asrpro1 = asrpro_init(UART_2, UART2_RX_P33_8, UART2_TX_P33_9, 9600);
 
     imu_init(IMU_DEVICE_963RA);
