@@ -52,8 +52,10 @@ void system_init(void)
     // lidar_front = stp23l_init(UART_6, UART6_RX_P23_1, UART6_TX_P22_0, 230400);
 
     maixcam1 = maixcam_uart_init(UART_1, UART1_RX_P02_3, UART1_TX_P02_2, 115200);
-    test_maixcam();
-    // asrpro1 = asrpro_init(UART_2, UART2_RX_P33_8, UART2_TX_P33_9, 9600);
+    // test_maixcam();
+
+    asrpro1 = asrpro_init(UART_0, UART0_RX_P14_1, UART0_TX_P14_0, 9600);
+    test_asrpro();
 
     imu_init(IMU_DEVICE_963RA);
     attitude_init(ATTITUDE_EKF);

@@ -112,10 +112,12 @@ void test_emm42()
 {
     while (1)
     {
+        // 伸出
         emm42_position_mode_cmd(&emm42_1, 0, 1, 1500, 240, 5.5 * 3200, 0, 0);
         emm42_send_cmd(&emm42_1);
         system_delay_ms(2000);
 
+        // 收回
         emm42_position_mode_cmd(&emm42_1, 0, 0, 1500, 240, 5.5 * 3200, 0, 0);
         emm42_send_cmd(&emm42_1);
         system_delay_ms(2000);
@@ -170,5 +172,24 @@ void test_maixcam()
         lcd_show_string(0, 1, buf);
 
         system_delay_ms(100);
+    }
+}
+
+void test_asrpro()
+{
+    while (1)
+    {
+        asrpro_set_status(&asrpro1, 1);
+        lcd_clear();
+        lcd_show_string(0, 1, "one");
+        system_delay_ms(5000);
+        asrpro_set_status(&asrpro1, 2);
+        lcd_clear();
+        lcd_show_string(0, 1, "two");
+        system_delay_ms(5000);
+        asrpro_set_status(&asrpro1, 3);
+        lcd_clear();
+        lcd_show_string(0, 1, "three");
+        system_delay_ms(5000);
     }
 }

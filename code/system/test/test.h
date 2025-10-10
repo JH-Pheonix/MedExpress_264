@@ -8,6 +8,7 @@
 #include "maixcam.h"
 #include "encoder.h"
 #include "emm42.h"
+#include "asrpro.h"
 #include "servo.h"
 #include "imu.h"
 #include "attitude.h"
@@ -29,5 +30,6 @@ void test_emm42();
 void test_imu();
 void test_signal();
 void test_maixcam();
+void test_asrpro();
 
 #endif

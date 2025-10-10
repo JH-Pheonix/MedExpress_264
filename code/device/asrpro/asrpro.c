@@ -160,6 +160,7 @@ vuint8 asrpro_get_ack(asrpro_obj_t *asrpro)
 
 void asrpro_set_status(asrpro_obj_t *asrpro, vuint8 status)
 {
+    asrpro_reset_ack(asrpro); // 先清空ack
     switch (status)
     {
     case 1:
