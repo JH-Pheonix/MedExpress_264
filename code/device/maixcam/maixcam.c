@@ -174,9 +174,11 @@ void maixcam_uart_handler(maixcam_obj_t *maixcam)
     }
 }
 
-maixcam_message_t maixcam_pop_data()
+maixcam_message_t maixcam_pop_data(maixcam_obj_t *maixcam)
 {
-    return data;
+    maixcam_message_t return_data = data;
+    maixcam_clear(maixcam);
+    return return_data;
 }
 
 void maixcam_clear(maixcam_obj_t *maixcam)
